@@ -1,0 +1,13 @@
+[Unit]
+Description=Watchdog reseau - sync automatique des repos au retour de connexion
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash %h/workflow-claude/scripts/network_watchdog.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

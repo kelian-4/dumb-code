@@ -1,0 +1,14 @@
+[Unit]
+Description=Recepteur de webhooks GitHub - pull automatique
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/usr/bin/env python3 %h/workflow-claude/scripts/webhook_listener.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
