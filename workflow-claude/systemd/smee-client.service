@@ -1,0 +1,14 @@
+[Unit]
+Description=Smee client - relais webhook GitHub vers localhost
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment="NODE_OPTIONS=--unhandled-rejections=warn"
+ExecStart=%h/.npm-global/bin/smee -u https://smee.io/TON_CANAL_ICI -t http://localhost:4949
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
