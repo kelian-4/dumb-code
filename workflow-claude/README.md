@@ -1,6 +1,6 @@
 # workflow-claude
 
-Ensemble de scripts et de config mis au point avec Claude pour automatiser le
+Ensemble de scripts et de config mis au point pour Claude (interface web ou dans l'app si t'as claude claude ca va peut-etre pas t'aider) pour automatiser le
 workflow "Claude clone un repo, travaille dessus, push, et le pull se fait
 automatiquement en local pour que je puisse tester et reviewer".
 
