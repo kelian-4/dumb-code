@@ -1,0 +1,9 @@
+prefix=/usr
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/lua5.5
+
+Name: Lua
+Description: Lua language engine
+Version: 5.5.1
+Libs: -L${libdir} -llua5.5
+Cflags: -I${includedir}
