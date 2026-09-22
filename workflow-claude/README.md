@@ -97,6 +97,25 @@ les placeholders entre crochets par les vraies valeurs a chaque usage - ne
 jamais laisser un token en clair dans un prompt que tu pourrais partager ou
 committer par erreur.
 
+## Environnement de test Hyprland + Quickshell (sandbox sans GPU)
+
+Sujet independant du workflow webhook ci-dessus : comment obtenir un vrai
+Hyprland (0.56+, config Lua) + Quickshell qui tournent et se composent,
+capturables en screenshot reel, a l'interieur d'un sandbox Claude sans GPU
+(pas de `/dev/dri`, noyau hote sans `CONFIG_DRM`) — utile pour verifier
+visuellement du QML avant de pousser, plutot que de deviner a l'aveugle.
+
+- **hyprland-quickshell-sandbox.md** : le guide complet, etape par etape
+  (VM QEMU avec GPU virtio logiciel, chroot d'une distribution plus recente
+  compilee depuis les sources, capture d'ecran via `wlr-screencopy`).
+- **bin/** : binaires deja compiles (Hyprland, Quickshell, client de capture
+  d'ecran), bibliotheques dont compiler depuis les sources etait necessaire,
+  patches de compatibilite, et scripts de relance — pour eviter de tout
+  recompiler depuis zero a chaque nouvelle session (plusieurs heures sur un
+  seul cœur CPU la premiere fois). Voir `bin/README.md` pour le detail et
+  les limites (l'image disque complete de la VM n'est pas incluse, trop
+  volumineuse pour un repo git normal).
+
 ## Mise en place resumee pour un nouveau repo
 
 1. Cree une branche `dev` sur le repo (`create_dev_branches.sh` ou
