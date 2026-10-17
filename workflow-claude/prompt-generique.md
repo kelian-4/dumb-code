@@ -8,6 +8,17 @@ Repo : [URL_DU_REPO]
 Utilise ce PAT pour toutes les operations git (clone, fetch, push) et pour l'API GitHub :
 [COLLER_LE_TOKEN_ICI]
 
+## Identite des commits
+
+Tous les commits doivent etre faits et pushes sous MON identite, pas sous un nom "Claude", "root" ou autre. Avant le premier commit dans chaque clone, configure :
+
+```bash
+git config user.name "[TON_COMPTE_GITHUB]"
+git config user.email "[TON_COMPTE_GITHUB]@users.noreply.github.com"
+```
+
+(ou l'email que je t'indique, s'il est different). Ne laisse jamais l'identite par defaut de la machine (`root@...`) et n'ajoute aucun trailer `Co-authored-by` ni mention d'une IA dans les messages de commit. L'auteur et le committer doivent etre moi.
+
 ## Branches
 
 - `main` : branche stable, je merge dedans seulement apres validation de mon cote.
